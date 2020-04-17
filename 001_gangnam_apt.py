@@ -2,9 +2,8 @@ import random
 
 apt = 27 * 100000000
 print('내가 가지고 싶은 아파트는 27억입니다')
-# salary = float(input('연봉은? '))
-# salary = salary * 10000000
-salary = 5 * 10000000
+salary = float(input('연봉은?(?천만원) '))
+salary = salary * 10000000
 print('저축만으로는 ', apt/salary, '년 걸려요')
 interest = 0.02
 account = 0
