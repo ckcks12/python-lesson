@@ -23,4 +23,4 @@ for i in range(100):
     year += 1
     if account >= apt:
         break
-print('부업을 하게 되면 ', year, '년 걸려요')
+print('복권을 하게 되면 ', year, '년 걸려요')
