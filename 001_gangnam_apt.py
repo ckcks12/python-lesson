@@ -1,3 +1,32 @@
+# 처음에 원하는 가격 출력
+print(270000)
+
+# 내 월급도 출력
+print(400)
+
+# 사칙연산
+print(400 + 400) # 두달치모았을때
+print(400 - 150) # 차할부냈을때
+print(400*2) # 인센티브 탓을때
+print(400 - (400 / 10)) # 십일조낼때
+
+# 월급 더해서 얼마나걸리는지 볼까요
+print(270000 - (400 + 400 + 400 + 400 + 400 + 400))
+
+# 변수로 저장해서 써볼까요
+price = 270000
+salary = 400
+
+price = price - salary
+price = price - salary
+price = price - salary
+price = price - salary
+price = price - salary
+
+print(price) # 허걱 한참 남았네요
+
+
+
 import random
 
 apt = 27 * 100000000

@@ -60,7 +60,7 @@ bottom = min(prices)
 print(bottom)
 
 
-# 지지선/저항선 그릴껀데 이제보니 너무 기간이 길어
+# 너무 기간이 길어
 # 왔다리갔다리 재밌어보이는 2019.08~2019.10 을 뽑아옵시다
 interest_dates = []
 interest_prices = []
@@ -68,17 +68,15 @@ for r in rows:
     if '2019-08-01' <= r['Date'] <= '2019-10-31':
         interest_prices.append(float(r['Close']))
         interest_dates.append(r['Date'])
+    else:
+        interest_prices.append(None)
+        interest_dates.append(None)
 # 잘 뽑혔는지 개수로 확인해주고
 print(len(prices))
 print(len(interest_prices))
-# 차트 새로
-chart = pygal.Line()
+
 chart.title = '2019-08-01 ~ 2019-10-31'
 chart.x_labels = interest_dates
 chart.add('prices', interest_prices)
-# 지지선 계산
-# top 3 뽑기 - 정렬
-tops = sorted(interest_prices, reverse=True)
-chart.add('tops', tops[:3])
 
 chart.render_in_browser()
