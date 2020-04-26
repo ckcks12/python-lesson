@@ -1,3 +1,49 @@
+import csv
+data = []
+with open('/Users/danny/Downloads/MSFT.csv') as file:
+    reader = csv.DictReader(file)
+    for r in reader:
+        data.append(r)
+
+X = []
+Y = []
+for d in data:
+    X.append(d['Date'])
+    Y.append(float(d['Close']))
+high = []
+low = []
+for d in data:
+    high.append(float(d['High']))
+    low.append(float(d['Low']))
+X = []
+Y = []
+high = []
+low = []
+for d in data:
+    if '2019-09-01' <= d['Date'] <= '2019-10-31':
+        X.append(d['Date'])
+        Y.append(float(d['Close']))
+        high.append(float(d['High']))
+        low.append(float(d['Low']))
+
+# import pygal
+# chart = pygal.Line()
+# chart.title = '주식비서'
+# chart.x_labels = X
+# chart.add('prices', Y)
+# chart.add('상한가', high)
+# chart.add('하한가', low)
+# chart.render_in_browser()
+
+account = 1000
+print('현재 가지고 있는 돈', account, '달러')
+for i in range(len(high)):
+    stock = account / low[i] # 최저가로 최대한 많이 사요
+    account = account % low[i] # 살 수 없을 만큼 사고 나머지를 남겨요
+    account += stock * high[i] # 최고가로 되팔아요
+print('현재 가지고 있는 돈', account, '달러')
+exit()
+
 prices = [100, 110, 90, 80, 120, 150, 120, 190]
 
 # 순회 출력 한번 해주고
